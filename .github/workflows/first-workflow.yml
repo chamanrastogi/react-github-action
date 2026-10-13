@@ -24,8 +24,7 @@ jobs:
       - name: run eslist in app
         run: npm run lint
 
-  test-job:
-    needs: [lint-job]
+  test-job:  
     runs-on: ubuntu-latest
 
     steps:
