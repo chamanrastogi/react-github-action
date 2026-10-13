@@ -6,9 +6,7 @@ on:
   pull_request : 
     branches :  
       - master 
-      - dev 
-      - test-pull-request 
-     
+      - dev       
 
      
 jobs:
