@@ -3,11 +3,13 @@ name: first-workflow
 
 on: 
   push : 
-  pull_request :
+  pull_request : 
     branches :  
       - master 
       - dev 
-      - test-pull-request 
+      - qa 
+     
+
      
 jobs:
   first-workflow:
