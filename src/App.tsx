@@ -5,8 +5,14 @@ function App() {
 
   return (
     <>
-      <h2>Code with Chaman</h2>
-      <p>This is my github action project Update</p>
+
+  
+      <h1 className='myspace'>Code with Chaman</h1>
+      <p>This is my github action project</p>
+
+      <h3>Chaman Rastogi</h3>
+      <p>Please Like and Subscribe</p>
+
     </>
   )
 }
