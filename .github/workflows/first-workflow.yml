@@ -3,8 +3,13 @@ name: first-workflow
 
 on: 
   push : 
-  pull_request : 
-     
+  pull_request :
+    branches :  
+      - main 
+      - dev 
+      - qa 
+      
+
 jobs:
   first-workflow:
     runs-on: ubuntu-latest
