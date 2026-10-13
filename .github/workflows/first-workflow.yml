@@ -1,14 +1,16 @@
-
 name: first-workflow
 
-on: 
-  push : 
-  pull_request : 
-    branches :  
-      - master 
-      - dev       
+on:
+  push:
+    branches:
+      - master
+      - dev
 
-     
+  pull_request:
+    branches:
+      - master
+      - dev
+
 jobs:
   first-workflow:
     runs-on: ubuntu-latest
