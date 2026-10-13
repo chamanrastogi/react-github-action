@@ -4,12 +4,7 @@ name: first-workflow
 on: 
   push : 
   pull_request :
-    branches :  
-      - master 
-      - dev 
-      - test-pull-request 
-      
-
+   
 jobs:
   first-workflow:
     runs-on: ubuntu-latest
