@@ -4,11 +4,7 @@ name: first-workflow
 on: 
   push : 
   pull_request : 
-    branches :  
-      - master 
-      - dev       
-
-
+  
 
 jobs:
   first-workflow:
@@ -26,6 +22,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      
+      - name: run eslist in app
+        run: npm run linit 
 
       - name: Build project
         run: npm run build
