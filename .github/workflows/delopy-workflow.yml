@@ -1,24 +1,23 @@
-
 name: delopy-workflow
 on:
-  workflow_run:
-    workflows : [First workflow]
-    types: 
-      - completed
+    workflow_run:
+        workflows: [First workflow]
+        types:
+            - completed
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-       - name: Checkout repository
-         uses: actions/checkout@v5
+    build:
+        if : ${{ github.event.workflow_run.conclusion == 'success' }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
 
-       - name: "Install Vercel Cli"
-         run: npm install --global vercel
+            - name: Install dependencies
+              run: npm ci
 
-       - name: Delopment on Vercel
-         run: vercel --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
-            
+            - name: "Install Vercel Cli"
+              run: npm install --global vercel
 
-
-
+            - name: Delopment on Vercel
+              run: vercel --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
