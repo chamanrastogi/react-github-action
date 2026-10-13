@@ -24,7 +24,7 @@ jobs:
         run: npm ci
       
       - name: run eslist in app
-        run: npm run linit 
+        run: npm run lint
 
       - name: Build project
         run: npm run build
