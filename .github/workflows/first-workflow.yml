@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  first-workflow:
+  lint-job:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,8 +24,37 @@ jobs:
       - name: run eslist in app
         run: npm run lint
 
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run tests
         run: npm run test
+
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
 
       - name: Build project
         run: npm run build
@@ -35,4 +64,4 @@ jobs:
         with:
           name: react-build
           path: dist/
-          retention-days: 7
+          retention-days: 7    
