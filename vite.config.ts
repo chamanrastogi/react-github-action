@@ -8,5 +8,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
   },
-   base: '/react-github-action/',
+  //  base: '/react-github-action/',
 })
