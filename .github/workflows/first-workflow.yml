@@ -24,7 +24,7 @@ jobs:
       - name: run eslist in app
         run: npm run lint
 
-      - name: runTest cases
+      - name: Run tests
         run: npm run test
 
       - name: Build project
