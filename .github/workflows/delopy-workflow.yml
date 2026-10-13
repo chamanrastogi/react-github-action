@@ -1,9 +1,9 @@
 
 name: delopy-workflow
 on:
-   workflow_run:
-    workflows: ["first-workflow"]
-    types:
+  workflow_run:
+    workflows : [First workflow]
+    types: 
       - completed
 
 jobs:
